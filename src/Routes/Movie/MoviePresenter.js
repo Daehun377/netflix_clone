@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from "styled-components";
 import Section from "../../Components/Section";
 import Loader from "../../Components/Loader";
+import Poster from "../../Components/Poster";
 
 
 
@@ -25,28 +26,35 @@ const MoviePresenter = ({
                 {nowPlaying && nowPlaying.length > 0 && (
                     <Section title={"NowPlaying"}>
                         {nowPlaying.map(movie => (
-                            <h1>{movie.title}</h1>
+                            <Poster
+                                key={movie.id}
+                                id={movie.id}
+                                title={movie.title}
+                                imgUrl={movie.poster_path}
+                                rating={movie.vote_average}
+                                releaseDate={movie.release_date}
+                            />
                         ))}
                     </Section>
                 )}
                 {popular && popular.length > 0 && (
                     <Section title={"Popular"}>
                         {popular.map(movie => (
-                            <h1>{movie.popularity}</h1>
+                            <h1 key={movie.id}>{movie.popularity}</h1>
                         ))}
                     </Section>
                 )}
                 {topRated && topRated.length > 0 && (
                     <Section title={"Top Rated"}>
                         {topRated.map(movie => (
-                            <h1>{movie.vote_count}</h1>
+                            <h1 key={movie.id}>{movie.vote_count}</h1>
                         ))}
                     </Section>
                 )}
                 {upComing && upComing.length > 0 && (
                     <Section title={"Upcoming"}>
                         {upComing.map(movie => (
-                            <h1>{movie.title}</h1>
+                            <h1 key={movie.id}>{movie.title}</h1>
                         ))}
                     </Section>
                 )}
