@@ -11,6 +11,7 @@ const makeRequest = (path, params) =>
     })
 
 const getAntyhing = async (path, params = {}) => {
+
     try{
         const {
             data : {results},
@@ -25,20 +26,22 @@ const getAntyhing = async (path, params = {}) => {
 }
 
 
-const movieApi = {
+export const movieApi = {
     nowPlaying : () => getAntyhing("movie/now_playing"),
     popular : () => getAntyhing("movie/popular"),
     topRated : () => getAntyhing("movie/top_rated"),
     upComing : () => getAntyhing("movie/upcoming"),
     detail : (movie_id) => getAntyhing(`movie/${movie_id}`),
-    search : (query) => getAntyhing("search/movie", {query})
+    search : (query) => getAntyhing("search/movie", {query}),
+    similar : (movie_id) => getAntyhing(`movie/${movie_id}/similar`)
 };
 
-const tvApi = {
+export const tvApi = {
     airingToday : () => getAntyhing("tv/airing_today"),
     onAir : () => getAntyhing("tv/on_the_air"),
     popular : () => getAntyhing("tv/popular"),
     topRated : () => getAntyhing("tv/top_rated"),
     detail : (tv_id) => getAntyhing(`tv/${tv_id}`),
-    search : (query) => getAntyhing("search/tv", {query}) //query : params 키와 값이 
+    search : (query) => getAntyhing("search/tv", {query}),
+    similar : (tv_id) => getAntyhing(`tv/${tv_id}/similar`)
 };
