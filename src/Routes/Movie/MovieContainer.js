@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {movieApi} from "../../Api";
+import MoviePresenter from "./MoviePresenter";
 
 const MovieContainer = () => {
 
@@ -39,9 +40,14 @@ const MovieContainer = () => {
  }, []);
 
  return (
-  <div>
-      <h1>{movies.nowPlaying.length}</h1>
-  </div>
+  <MoviePresenter
+      {...movies} //이렇게 하면 저 위에 있는 키 값들을 다 받아올수 있다.
+      // loading={movies.loading}
+      // nowPlaying={movies.nowPlaying}
+      // popular={movies.popular}
+      // topRated={movies.topRated}
+      // upComing={movies.upComing}
+  />
  );
 };
 

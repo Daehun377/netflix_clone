@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {tvApi} from "../../Api";
+import TvPresenter from "./TvPresenter";
 
 const TvContainer = () => {
 
@@ -41,7 +42,9 @@ const TvContainer = () => {
 
  return (
   <div>
-    <h1>{tvs.airingToday.length}</h1>
+    <TvPresenter
+        {...tvs}
+    />
   </div>
  );
 };
