@@ -21,7 +21,7 @@ const List = styled.ul`
   display: flex;
 `;
 
-const Item = styled.li`
+const Item = styled.li` 
   width: 80px;
   height: 50px;
   text-align: center;
