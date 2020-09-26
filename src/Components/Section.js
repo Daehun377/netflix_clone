@@ -21,7 +21,8 @@ const Grid = styled.div`
 
 
 
-const Section = ({title, children}) => {
+const Section = ({title, children}) => { //이것도 원래 props.title로 해줘야 하는데 이렇게 써줄 수 있다.
+    console.log("children is ", children)
     return (
         <Container>
             <Title>{title}</Title>

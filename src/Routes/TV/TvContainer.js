@@ -20,8 +20,11 @@ const TvContainer = () => {
 
      const [airingToday,airingTodayError ] = await tvApi.airingToday() //데이터가 담기는 동안에 기다리게 끔 비동기화 시켜준다.
      const [onAir, onAirError] = await tvApi.onAir()
+     // console.log("onAir is ", onAir)
      const [popular, popularError] = await tvApi.popular()
+     // console.log("popular is ", popular)
      const [topRated, topRatedError] = await tvApi.topRated()
+     // console.log("topRated is",topRated)
         setTvs({
             airingToday,
             onAir,
@@ -33,17 +36,20 @@ const TvContainer = () => {
             topRatedError,
             loading : false
         })
-
  };
 
  useEffect(() => {
      getData()
- })
+ },[])
 
  return (
   <div>
     <TvPresenter
-        {...tvs}
+        loading={tvs.loading}
+        airingToday={tvs.airingToday}
+        onAir={tvs.onAir}
+        popular={tvs.popular}
+        topRated={tvs.topRated}
     />
   </div>
  );

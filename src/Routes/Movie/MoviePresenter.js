@@ -49,21 +49,42 @@ const MoviePresenter = ({
                     {popular && popular.length > 0 && (
                         <Section title={"Popular"}>
                             {popular.map(movie => (
-                                <h1 key={movie.id}>{movie.popularity}</h1>
+                                <Poster
+                                    key={movie.id}
+                                    id={movie.id}
+                                    title={movie.title}
+                                    imgUrl={movie.poster_path}
+                                    rating={movie.vote_average}
+                                    releaseDate={movie.release_date}
+                                />
                             ))}
                         </Section>
                     )}
-                    // {topRated && topRated.length > 0 && (
+                     {topRated && topRated.length > 0 && (
                     <Section title={"Top Rated"}>
                         {topRated.map(movie => (
-                            <h1 key={movie.id}>{movie.vote_count}</h1>
+                            <Poster
+                                key={movie.id}
+                                id={movie.id}
+                                title={movie.title}
+                                imgUrl={movie.poster_path}
+                                rating={movie.vote_average}
+                                releaseDate={movie.release_date}
+                            />
                         ))}
                     </Section>
                 )}
                  {upComing && upComing.length > 0 && (
                     <Section title={"Upcoming"}>
                         {upComing.map(movie => (
-                            <h1 key={movie.id}>{movie.title}</h1>
+                            <Poster
+                                key={movie.id}
+                                id={movie.id}
+                                title={movie.title}
+                                imgUrl={movie.poster_path}
+                                rating={movie.vote_average}
+                                releaseDate={movie.release_date}
+                            />
                         ))}
                     </Section>
                 )}

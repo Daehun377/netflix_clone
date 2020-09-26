@@ -14,7 +14,7 @@ const Loader = () => {
     return (
         <Container>
             <span role={"img"} aria-label={"loading"}>
-                로딩중.....😀
+                로딩중입니다.....😀
             </span>
         </Container>
     );

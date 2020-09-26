@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {movieApi} from "../../Api";
 import MoviePresenter from "./MoviePresenter";
-import axios from "axios";
 
 const MovieContainer = () => {
 
@@ -22,8 +21,12 @@ const MovieContainer = () => {
     const [nowPlaying, nowPlayingError] = await movieApi.nowPlaying() //상수 선언
      // console.log("nowPlaying is ", nowPlayingError)
     const [popular, popularError] = await movieApi.popular() //결국 앞서 Api.js에 정의 해줬던 것처럼 성공/실패로 구분.
+     // console.log("popular is", popular)
     const [topRated, topRatedError] = await movieApi.topRated()
+     // console.log("topRated is " , topRated)
     const [upComing, upComingError] = await movieApi.upComing()
+     // console.log("upcoming is " ,upComing)
+
      setMovies({ //3번
          nowPlaying: nowPlaying, //이름이 같으니까 nowPlaying하나만으로 가능, 원래는 nowPlaying : nowPlaying. 만약 Api.js에서 data = {results} 안해줄 경우는 여기다가 nowPlaying: nowPlaying.results로 해주면된다.
          popular : popular,
@@ -51,11 +54,11 @@ const MovieContainer = () => {
   <MoviePresenter
 
   //     {...movies} //이렇게 하면 저 위에 있는 키 값들을 다 받아올수 있다.
-  //     // loading={movies.loading}
+      loading={movies.loading}
       nowPlaying={movies.nowPlaying}
-  //     // popular={movies.popular}
-  //     // topRated={movies.topRated}
-  //     // upComing={movies.upComing}
+      popular={movies.popular}
+      topRated={movies.topRated}
+      upComing={movies.upComing}
   />
  );
 };
