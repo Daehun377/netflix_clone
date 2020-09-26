@@ -18,7 +18,7 @@ const TvContainer = () => {
 
  const getData = async() => {
 
-     const [airingToday,airingTodayError ] = await tvApi.airingToday()
+     const [airingToday,airingTodayError ] = await tvApi.airingToday() //데이터가 담기는 동안에 기다리게 끔 비동기화 시켜준다.
      const [onAir, onAirError] = await tvApi.onAir()
      const [popular, popularError] = await tvApi.popular()
      const [topRated, topRatedError] = await tvApi.topRated()

@@ -50,7 +50,7 @@ const ReleaseDate = styled.span`
 
 
 
-const Poster = ({id, title, imgUrl, rating, releaseDate}) => {
+const Poster = ({id, title, imgUrl, rating, releaseDate}) => { //이것도 마찬가지로 props.id, props.title등을 상수화해서 해준거임.
     return (
         <Container>
             <ImgContainer>
@@ -70,7 +70,7 @@ Poster.propTypes = {
     title : PropTypes.string.isRequired,
     imgUrl : PropTypes.string,
     rating : PropTypes.number,
-    releaseDate : PropTypes.string
+    releaseDate : PropTypes.string,
 };
 
 export default Poster;

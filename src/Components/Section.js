@@ -33,8 +33,8 @@ const Section = ({title, children}) => {
 Section.propTypes = {
     title : PropTypes.string.isRequired,
     children : PropTypes.oneOfType([
-        PropTypes.arrayOf(PropTypes.node),
-        PropTypes.node
+        PropTypes.arrayOf(PropTypes.node), //array가 담기거나
+        PropTypes.node //node 형식이 담기거나 둘중 하나
     ])
 };
 
