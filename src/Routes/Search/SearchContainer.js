@@ -40,7 +40,7 @@ const SearchContainer = () => {
             loading: false
         })
 
-        console.log(movies)
+        console.log(shows)
     }
 
 
