@@ -62,7 +62,7 @@ const Poster = ({id, title, imgUrl, rating, releaseDate}) => { //이것도 마�
                     }
                     // bgUrl={`https://image.tmdb.org/t/p/w500/${imgUrl}`}
                 />
-                <Rating>⭐ {rating}</Rating>
+                <Rating><span role="img" aria-label="rating">⭐</span>{rating}</Rating>
             </ImgContainer>
             <Title>{title}</Title>
             <ReleaseDate>{releaseDate}</ReleaseDate>
