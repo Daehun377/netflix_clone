@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {tvApi} from "../../Api";
+import {tvApi} from "../../Api"; //{}자체가 상수화
 import TvPresenter from "./TvPresenter";
 
 const TvContainer = () => {

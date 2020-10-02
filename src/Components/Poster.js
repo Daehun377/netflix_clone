@@ -55,7 +55,12 @@ const Poster = ({id, title, imgUrl, rating, releaseDate}) => { //이것도 마�
         <Container>
             <ImgContainer>
                 <Image
-                    bgUrl={`https://image.tmdb.org/t/p/w500/${imgUrl}`}
+                    bgUrl={
+                        imgUrl
+                            ? (`https://image.tmdb.org/t/p/w500/${imgUrl}`)
+                            : (require("../Image/emtyImage.png"))
+                    }
+                    // bgUrl={`https://image.tmdb.org/t/p/w500/${imgUrl}`}
                 />
                 <Rating>⭐ {rating}</Rating>
             </ImgContainer>
