@@ -23,6 +23,10 @@ const Input = styled.input`
 
 const SearchPresenter = ({movies, shows, keyword, onChange, onSubmit, loading, error}) => {
     return (
+        loading ?
+            <Loader/>
+            :
+            (
         <Container>
             <Form onSubmit={onSubmit}>
                 <Input
@@ -60,6 +64,7 @@ const SearchPresenter = ({movies, shows, keyword, onChange, onSubmit, loading, e
                 </Section>
             )}
         </Container>
+            )
     );
 };
 
