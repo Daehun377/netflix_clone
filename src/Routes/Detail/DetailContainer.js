@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { useParams , useLocation } from "react-router-dom";
 import {movieApi, tvApi} from "../../Api"
+import DetailPresenter from "./DetailPresenter";
 
 
 const DetailContainer = ({pathname}) => {
@@ -32,9 +33,7 @@ const DetailContainer = ({pathname}) => {
     },[id]) //어떤것을 잡을거냐라는 것 useEffect 공식문서 참조
 
     return (
-        <div>
-            <h1>{id}</h1>
-        </div>
+        <DetailPresenter {...item}/>
     );
 };
 
