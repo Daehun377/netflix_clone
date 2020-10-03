@@ -21,7 +21,7 @@ const Input = styled.input`
   width: 100%;
 `;
 
-const SearchPresenter = ({movies, shows, keyword, onChange, onSubmit, loading, error}) => {
+const SearchPresenter = ({movies, shows, keyword, onChange, onSubmit, loading, error, isMovie}) => {
     return (
         loading ?
             <Loader/>
@@ -44,7 +44,9 @@ const SearchPresenter = ({movies, shows, keyword, onChange, onSubmit, loading, e
                            title={movie.title}
                            imgUrl={movie.poster_path}
                            rating={movie.vote_average}
-                           releaseDate={movie.releaseDate}
+                           releaseDate={movie.release_date}
+                           isMovie={true}
+
                        />
                    ))}
                 </Section>
@@ -58,7 +60,7 @@ const SearchPresenter = ({movies, shows, keyword, onChange, onSubmit, loading, e
                             title={show.name}
                             imgUrl={show.poster_path}
                             rating={show.vote_average}
-                            releaseDate={show.releaseDate}
+                            releaseDate={show.first_air_date}
                         />
                     ))}
                 </Section>

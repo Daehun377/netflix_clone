@@ -42,6 +42,7 @@ const MoviePresenter = ({
                                     imgUrl={movie.poster_path}
                                     rating={movie.vote_average}
                                     releaseDate={movie.release_date}
+                                    isMovie={true}
                                 />
                             ))}
                         </Section>
@@ -56,6 +57,7 @@ const MoviePresenter = ({
                                     imgUrl={movie.poster_path}
                                     rating={movie.vote_average}
                                     releaseDate={movie.release_date}
+                                    isMovie={true}
                                 />
                             ))}
                         </Section>
@@ -70,6 +72,7 @@ const MoviePresenter = ({
                                 imgUrl={movie.poster_path}
                                 rating={movie.vote_average}
                                 releaseDate={movie.release_date}
+                                isMovie={true}
                             />
                         ))}
                     </Section>
@@ -84,6 +87,7 @@ const MoviePresenter = ({
                                 imgUrl={movie.poster_path}
                                 rating={movie.vote_average}
                                 releaseDate={movie.release_date}
+                                isMovie={true}
                             />
                         ))}
                     </Section>

@@ -32,7 +32,7 @@ export const movieApi = {
     popular : () => getAntyhing("movie/popular"),
     topRated : () => getAntyhing("movie/top_rated"),
     upComing : () => getAntyhing("movie/upcoming"),
-    detail : (movie_id) => getAntyhing(`movie/${movie_id}`), //선택된 movie_id를 path에 명시되어있는 path params로 만들어준것.
+    detail : (id) => getAntyhing(`movie/${id}`), //선택된 movie_id를 path에 명시되어있는 path params로 만들어준것.
     search : (query) => getAntyhing("search/movie", {query}), //params는 일반적으로 객체모양이다. 키:값 query로만 해주는건 축약형으로 쓸수 있는것. 만약 ()에 keyword를 담게 되면 query : keyword로 해줘야 할것
     similar : (movie_id) => getAntyhing(`movie/${movie_id}/similar`)
 };
